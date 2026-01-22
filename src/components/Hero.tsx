@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
             </span>
           </div>
           
-          <h1 className="font-bold text-4xl lg:text-6xl leading-tight text-slate-900 dark:text-white mb-6">
+          <h1 className="font-bold text-4xl lg:text-6xl text-slate-900 dark:text-white mb-6">
             Your website is paying for clicks, <br/>
             <span className="text-primary">but is it closing jobs?</span>
           </h1>

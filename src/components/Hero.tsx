@@ -65,7 +65,10 @@ const Hero: React.FC = () => {
               <img 
                 alt="Plumber avatar" 
                 className="w-10 h-10 rounded-full object-cover border-2 border-primary" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCuoxh-mN-DKdrTg5p-0UqX-DuBBN72oQflCDYe-Pvx7IXwxI2VdUa8Iv0BFCZtEY-La28XEzmPTUipUHqIcy2P1Bo-eRJr8_udf7Uxpd_3_hq8uvF37-f76_lWKgcKobyI3xcoC_WkWUtQewHbuqKOCvw9p4nCGecm35GwKibafKpZcSK4gzZvUoiFrkzITBVFbK2KCKcktXvxexEiDdUr4gJG9jT7UGGmqUJwnFgl5jmn3bkXIgauBdlREnVkoLN078WNOWDJQ0" 
+                src="/icon.png"
+                width="40"
+                height="40"
+                loading="lazy"
               />
               <div>
                 <p className="text-sm font-bold text-slate-900 dark:text-white">Mike "The Pipe"</p>

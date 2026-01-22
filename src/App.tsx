@@ -54,27 +54,13 @@ function App() {
       <Navigation />
       <Hero />
       
-      <Suspense fallback={<SectionLoader />}>
+      <Suspense 
+       fallback={{<div className="h-40 animate-pulse bg-gray-100"></div>}}>
         <Stats />
-      </Suspense>
-      
-      <Suspense fallback={<SectionLoader />}>
         <Partners />
-      </Suspense>
-      
-      <Suspense fallback={<SectionLoader />}>
         <Process />
-      </Suspense>
-      
-      <Suspense fallback={<SectionLoader />}>
         <JobSearch />
-      </Suspense>
-      
-      <Suspense fallback={<SectionLoader />}>
         <MobileApp />
-      </Suspense>
-      
-      <Suspense fallback={<SectionLoader />}>
         <Footer />
       </Suspense>
     </div>

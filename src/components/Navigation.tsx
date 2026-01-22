@@ -4,7 +4,7 @@ const Navigation: React.FC = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 w-full py-4 px-4 sm:px-8 lg:px-16 flex justify-between items-center bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-slate-200/20 dark:border-slate-700/20 z-50">
       <div className="flex items-center gap-2">
-        <span className="material-icons text-primary text-2xl drop-shadow-sm">speed</span>
+        <span className="material-icons text-primary text-2xl drop-shadow-sm"></span>
         <span className="font-display text-xl tracking-wide text-slate-900 dark:text-white uppercase">
           Trade<span className="text-primary font-bold">Flow</span>
         </span>

@@ -54,8 +54,7 @@ function App() {
       <Navigation />
       <Hero />
       
-      <Suspense 
-       fallback={{<div className="h-40 animate-pulse bg-gray-100"></div>}}>
+      <Suspense>
         <Stats />
         <Partners />
         <Process />

@@ -40,7 +40,7 @@ const MobileApp: React.FC = () => {
           phone: formData.phone,
           trade: formData.trade,
           problem: formData.specificProblem,
-          to_name: 'TradieFlow Team',
+          to_name: 'TradeFlow Team',
         }
       )
 

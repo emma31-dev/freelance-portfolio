@@ -50,8 +50,8 @@ const JobSearch: React.FC = () => {
     },
     {
       type: 'Electrician',
-      name: 'PowerPro Services',
-      location: 'Brisbane, QLD',
+      name: 'Nordic Electric',
+      location: 'Stockholm, Sweden',
       icon: 'bolt',
       iconColor: 'text-blue-500',
       iconBg: 'bg-blue-50 dark:bg-blue-900/20',
@@ -60,14 +60,14 @@ const JobSearch: React.FC = () => {
         performanceScore: 35,
         conversionRate: '1.5%',
         monthlyLeads: 22,
-        revenue: '$18,900'
+        revenue: '156,000 SEK'
       },
       after: {
         loadTime: '0.8s',
         performanceScore: 94,
         conversionRate: '4.1%',
         monthlyLeads: 67,
-        revenue: '$57,400'
+        revenue: '478,000 SEK'
       },
       improvement: '+204% more clients'
     }
@@ -85,7 +85,7 @@ const JobSearch: React.FC = () => {
             Real Results from <span className="text-primary">Real Tradies</span>
           </h2>
           <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            See how speed optimization transformed these businesses from losing leads to closing more jobs than ever.
+            See how speed optimization transformed these businesses in Australia and Sweden from losing leads to closing more jobs than ever.
           </p>
         </div>
         

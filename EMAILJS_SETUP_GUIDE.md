@@ -1,4 +1,4 @@
-# EmailJS Setup Guide for TradieFlow Contact Form
+# EmailJS Setup Guide for TradeFlow Contact Form
 
 ## Current Status
 ✅ Service ID: `service_z3abo3tuuuu`  
@@ -13,7 +13,7 @@
 
 ### Step 2: Create Email Template
 1. Click **"Create New Template"** button
-2. Give it a name: `TradieFlow Contact Form`
+2. Give it a name: `TradeFlow Contact Form`
 3. Set the **Subject**: `New Speed Audit Request - {{trade}} from {{from_name}}`
 
 ### Step 3: Template Content
@@ -22,7 +22,7 @@ Copy and paste this exact content into the template body:
 ```
 Hi,
 
-New speed audit request received from your TradieFlow website:
+New speed audit request received from your TradeFlow website:
 
 📋 CONTACT DETAILS:
 Name: {{from_name}}
@@ -40,7 +40,7 @@ Trade: {{trade}}
 - Send detailed audit within 24 hours
 
 Best regards,
-TradieFlow Contact System
+TradeFlow Contact System
 ```
 
 ### Step 4: Configure Template Variables

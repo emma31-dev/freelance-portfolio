@@ -41,12 +41,6 @@ const MobileApp = lazy(() =>
 
 const Footer = lazy(() => import('./components/Footer'))
 
-// Minimal loading component to reduce CLS
-const SectionLoader = () => (
-  <div className="h-20 flex justify-center items-center">
-    <div className="w-6 h-6 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
-  </div>
-)
 
 function App() {
   return (

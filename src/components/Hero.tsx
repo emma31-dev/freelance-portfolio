@@ -48,7 +48,7 @@ const Hero: React.FC = () => {
         <div className="relative h-[500px] w-full lg:h-[600px] rounded-3xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-surface-dark dark:to-black overflow-hidden shadow-2xl">
           <div className="absolute inset-0 bg-[url('/manual-worker-warehouse.webp')] bg-cover bg-center opacity-90"></div>
           
-          <div className="absolute top-12 left-8 bg-white dark:bg-surface-dark p-4 rounded-xl shadow-lg border-l-4 border-primary max-w-xs animate-bounce" style={{animationDuration: '3s'}}>
+          <div className="absolute top-12 left-8 bg-white dark:bg-surface-dark p-4 rounded-xl shadow-lg border-l-4 border-primary max-w-x">
             <div className="flex items-center gap-3">
               <div className="bg-primary-100 dark:bg-primary-900/30 p-2 rounded-full border border-primary-200 dark:border-primary-800">
                 <span className="material-icons text-primary text-lg">check_circle</span>

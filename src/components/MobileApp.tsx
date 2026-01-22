@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import emailjs from '@emailjs/browser'
 import { EMAILJS_CONFIG } from '../config/emailjs'
 
 const MobileApp: React.FC = () => {
@@ -27,11 +26,14 @@ const MobileApp: React.FC = () => {
     setSubmitStatus('idle')
 
     try {
+      // Lazy load EmailJS only when form is submitted
+      const emailjs = await import('@emailjs/browser')
+      
       // Initialize EmailJS with your public key
-      emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY)
+      emailjs.default.init(EMAILJS_CONFIG.PUBLIC_KEY)
 
       // Send email using your EmailJS configuration
-      const result = await emailjs.send(
+      const result = await emailjs.default.send(
         EMAILJS_CONFIG.SERVICE_ID,
         EMAILJS_CONFIG.TEMPLATE_ID,
         {

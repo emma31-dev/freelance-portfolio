@@ -46,7 +46,7 @@ const Hero: React.FC = () => {
         </div>
         
         <div className="relative h-[500px] w-full lg:h-[600px] rounded-3xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-surface-dark dark:to-black overflow-hidden shadow-2xl">
-          <div className="absolute inset-0 bg-[url('/manual-worker-warehouse.jpg')] bg-cover bg-center opacity-90"></div>
+          <div className="absolute inset-0 bg-[url('/manual-worker-warehouse.webp')] bg-cover bg-center opacity-90"></div>
           
           <div className="absolute top-12 left-8 bg-white dark:bg-surface-dark p-4 rounded-xl shadow-lg border-l-4 border-primary max-w-xs animate-bounce" style={{animationDuration: '3s'}}>
             <div className="flex items-center gap-3">

@@ -1,19 +1,50 @@
-import React, { Suspense } from 'react'
+import { Suspense, lazy } from 'react'
 import Navigation from './components/Navigation'
 import Hero from './components/Hero'
 
-// Lazy load components for better performance
-const Stats = React.lazy(() => import('./components/Stats'))
-const Partners = React.lazy(() => import('./components/Partners'))
-const Process = React.lazy(() => import('./components/Process'))
-const JobSearch = React.lazy(() => import('./components/JobSearch'))
-const MobileApp = React.lazy(() => import('./components/MobileApp'))
-const Footer = React.lazy(() => import('./components/Footer'))
+// Lazy load components with preloading for better performance
+const Stats = lazy(() => 
+  import('./components/Stats').then(module => {
+    // Preload the next component while this one is loading
+    import('./components/Partners')
+    return module
+  })
+)
 
-// Loading component for lazy-loaded sections
+const Partners = lazy(() => 
+  import('./components/Partners').then(module => {
+    import('./components/Process')
+    return module
+  })
+)
+
+const Process = lazy(() => 
+  import('./components/Process').then(module => {
+    import('./components/JobSearch')
+    return module
+  })
+)
+
+const JobSearch = lazy(() => 
+  import('./components/JobSearch').then(module => {
+    import('./components/MobileApp')
+    return module
+  })
+)
+
+const MobileApp = lazy(() => 
+  import('./components/MobileApp').then(module => {
+    import('./components/Footer')
+    return module
+  })
+)
+
+const Footer = lazy(() => import('./components/Footer'))
+
+// Minimal loading component to reduce CLS
 const SectionLoader = () => (
-  <div className="flex justify-center items-center py-20">
-    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+  <div className="h-20 flex justify-center items-center">
+    <div className="w-6 h-6 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
   </div>
 )
 

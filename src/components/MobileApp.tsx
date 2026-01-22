@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import emailjs from '@emailjs/browser'
+import { EMAILJS_CONFIG } from '../config/emailjs'
 
 const MobileApp: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +10,9 @@ const MobileApp: React.FC = () => {
     phone: '',
     email: ''
   })
+  
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -16,10 +21,46 @@ const MobileApp: React.FC = () => {
     })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log('Form submitted:', formData)
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+
+    try {
+      // Initialize EmailJS with your public key
+      emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY)
+
+      // Send email using your EmailJS configuration
+      const result = await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        {
+          from_name: formData.fullName,
+          from_email: formData.email,
+          phone: formData.phone,
+          trade: formData.trade,
+          problem: formData.specificProblem,
+          to_name: 'TradieFlow Team',
+        }
+      )
+
+      console.log('Email sent successfully:', result.text)
+      setSubmitStatus('success')
+      
+      // Reset form after successful submission
+      setFormData({
+        fullName: '',
+        trade: '',
+        specificProblem: '',
+        phone: '',
+        email: ''
+      })
+    } catch (error) {
+      console.error('Email send failed:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -157,11 +198,50 @@ const MobileApp: React.FC = () => {
               
               <button
                 type="submit"
-                className="w-full bg-primary hover:bg-primary-600 text-white font-bold py-4 px-8 rounded-lg shadow-xl hover:shadow-primary/50 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                disabled={isSubmitting}
+                className={`w-full font-bold py-4 px-8 rounded-lg shadow-xl transition-all transform flex items-center justify-center gap-2 ${
+                  isSubmitting 
+                    ? 'bg-slate-400 cursor-not-allowed' 
+                    : 'bg-primary hover:bg-primary-600 hover:shadow-primary/50 hover:-translate-y-0.5'
+                } text-white`}
               >
-                Get My Free Speed Audit
-                <span className="material-icons">rocket_launch</span>
+                {isSubmitting ? (
+                  <>
+                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    Get My Free Speed Audit
+                    <span className="material-icons">rocket_launch</span>
+                  </>
+                )}
               </button>
+              
+              {submitStatus === 'success' && (
+                <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4">
+                  <div className="flex items-center gap-2">
+                    <span className="material-icons text-green-600 dark:text-green-400">check_circle</span>
+                    <p className="text-green-700 dark:text-green-300 font-medium">
+                      Thanks! I'll send your speed audit within 24 hours.
+                    </p>
+                  </div>
+                </div>
+              )}
+              
+              {submitStatus === 'error' && (
+                <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="material-icons text-red-600 dark:text-red-400">error</span>
+                    <p className="text-red-700 dark:text-red-300 font-medium">
+                      Email template not configured yet.
+                    </p>
+                  </div>
+                  <p className="text-red-600 dark:text-red-400 text-sm">
+                    Please email me directly at: <a href="mailto:your-email@example.com" className="underline font-medium">your-email@example.com</a>
+                  </p>
+                </div>
+              )}
               
               <p className="text-xs text-slate-500 dark:text-slate-400 text-center">
                 No spam. I'll send you a detailed performance report within 24 hours.

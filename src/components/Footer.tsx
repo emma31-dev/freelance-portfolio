@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
           <h1 className="font-display text-4xl lg:text-6xl text-slate-900 dark:text-white tracking-widest uppercase opacity-10 select-none">
             TRADIEFLOW
           </h1>
-          <p className="text-xs text-slate-400 mt-2">© 2024 TradieFlow. All Rights Reserved.</p>
+          <p className="text-xs text-slate-400 mt-2">© 2026 TradieFlow. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

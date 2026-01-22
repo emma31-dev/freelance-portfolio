@@ -6,7 +6,7 @@ const Navigation: React.FC = () => {
       <div className="flex items-center gap-2">
         <span className="material-icons text-primary text-2xl drop-shadow-sm">speed</span>
         <span className="font-display text-xl tracking-wide text-slate-900 dark:text-white uppercase">
-          Speed<span className="text-primary font-bold">Patch</span>
+          Tradie<span className="text-primary font-bold">Flow</span>
         </span>
       </div>
       

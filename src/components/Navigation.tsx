@@ -10,15 +10,18 @@ const Navigation: React.FC = () => {
       </div>
       
       <div className="hidden md:flex gap-6 font-medium text-sm text-slate-600 dark:text-slate-400">
-        <a className="hover:text-primary transition-colors font-semibold" href="#proof">Performance Proof</a>
-        <a className="hover:text-primary transition-colors font-semibold" href="#case-studies">Case Studies</a>
+        <a className="hover:text-primary transition-colors font-semibold" href="#performance">Performance</a>
+        <a className="hover:text-primary transition-colors font-semibold" href="#about">About</a>
         <a className="hover:text-primary transition-colors font-semibold" href="#services">Services</a>
         <a className="hover:text-primary transition-colors font-semibold" href="#quote">Get Quote</a>
       </div>
       
-      <button className="bg-primary hover:bg-primary-600 text-white font-bold py-2.5 px-5 rounded-full shadow-lg hover:shadow-primary/40 transition-all transform hover:-translate-y-0.5 text-sm uppercase tracking-wider border-2 border-primary hover:border-primary-600">
+      <a 
+        href="#quote"
+        className="bg-primary hover:bg-primary-600 text-white font-bold py-2.5 px-5 rounded-full shadow-lg hover:shadow-primary/40 transition-all transform hover:-translate-y-0.5 text-sm uppercase tracking-wider border-2 border-primary hover:border-primary-600"
+      >
         Free Audit
-      </button>
+      </a>
     </nav>
   )
 }

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Process: React.FC = () => {
   return (
-    <section className="py-24 bg-white dark:bg-background-dark">
+    <section id="services" className="py-24 bg-white dark:bg-background-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <p className="text-primary font-bold uppercase tracking-wider text-sm mb-3">Specialist Services</p>
